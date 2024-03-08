@@ -15,8 +15,11 @@ pipeline {
         }
         
         stage('Test') {
-            retry(3) {
-                sh 'Hello World Test'
+            steps {
+				retry(3){
+				
+					echo 'Hello World Test'
+				}
             }
         }
         
