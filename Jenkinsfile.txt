@@ -18,7 +18,7 @@ pipeline {
             steps {
 				retry(3){
 				
-					echo 'Hello World Test'
+					sh 'Hello World Test'
 				}
             }
         }
