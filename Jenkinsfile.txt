@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Hello World Build'
+                sh '''
+                 echo 'Inside the shell'
+                 ls -lah
+                
+                  '''
+                
+            }
+        }
+        
+        stage('Test') {
+            retry(3) {
+                sh 'Hello World Test'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Hello World Deploy'
+            }
+        }
+    }
+    
+    
+}
